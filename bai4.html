@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4: Vẽ hình chữ nhật</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background: violet">
+<div id="wrapper">
+    <h1>Vẽ hình chữ nhật</h1>
+    <div id="form">
+        <button type="button" onclick="rectangle.render()">Vẽ hình</button>
+    </div>
+    <div>
+        <canvas id="myCanvas" width="3000" height="2000" style="border: brown solid "></canvas>
+    </div>
+</div>
+<script>
+    let canvas = document.getElementById('myCanvas');
+    let ctx = canvas.getContext('2d');
+    function Rectangle(x, y, width , height ,color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.render = function () {
+            ctx.beginPath();
+            ctx.rect(this.x,this.y, this.width, this.height);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+    let rectangle = new Rectangle(10,10,200,100,"white")
+</script>
+</body>
+</html>

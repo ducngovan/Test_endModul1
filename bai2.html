@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2:Xoa phan tu</title>
+</head>
+<body>
+<div>
+    nhap so: <input  type="text" id="input" />
+    <button type="button" onclick="submit()">Submit</button>
+</div>
+<script>
+    function submit () {
+        let input = parseInt(document.getElementById('input').value);
+        var arr1 = [12,6,3,7,21,5,7];
+        // var arr2 = [12,6,3,4,21,5,7];
+        let result1 = new tryRemoveFromArray();
+        result1.getResult(input,arr1);
+        // result1.getResult(input,arr2);
+    }
+    function tryRemoveFromArray(n,array) {
+        this.n = n;
+        this.array = array;
+        this.getResult = function (n,array) {
+            for(var i = 0; i < array.length; i++){
+                if( n == array[i]){
+                    array.splice(i,1);
+                    alert("Mang moi khi xoa phan tu "+n+ " la: [ "+array+" ]");
+                    break;
+                }
+            }
+            if(i == array.length){
+                alert("Mang khong co phan tu "+n+ " de xoa: [ "+array+" ]");
+            }
+        }
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị dãy fibonaci</title>
+</head>
+<body>
+<div>
+    <h1>Hiển thị dãy fibonaci</h1>
+    <div>
+        <input type="text" value="" id="input">
+        <button type="button" onclick="printFibonaci()">Hiển thị</button>
+    </div><br>
+    <div id="result"></div>
+</div>
+<script>
+    function printFibonaci(){
+        let num = [];
+        let input = document.getElementById('input').value;
+        let cont = [];
+        num[0] = 1;
+        num[1] = 1;
+        for (var i = 2; i < input; i++) {
+            num[i] = num[i - 2] + num[i - 1];
+        }
+        for(let j =0; j < num.length; j++){
+            if(num[j] < input){
+                cont.push(num[j])
+            }
+        }document.write(cont+'<br>');
+    }
+</script>
+</body>
+</html>
